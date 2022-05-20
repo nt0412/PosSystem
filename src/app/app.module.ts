@@ -6,16 +6,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
+import { CalculatedPageManagerComponent } from './calculated-page-manager/calculated-page-manager.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    SideBarComponent
+    SideBarComponent,
+    CalculatedPageManagerComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

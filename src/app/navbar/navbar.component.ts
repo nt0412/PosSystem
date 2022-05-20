@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import '@fortawesome/fontawesome-free/js/all.js';
 
 @Component({
   selector: 'app-navbar',

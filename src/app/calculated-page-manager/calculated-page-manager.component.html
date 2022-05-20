@@ -1,0 +1,198 @@
+<div class="calculated-page-manager">
+    <!--Begin calc area -->
+    <div class="left-section">
+        <div class="calculate-area">
+            <!-- Header of calc area -->
+            <div class="header">
+                <div class="header-item">
+                    <p>#</p>
+                </div>
+                <div class="group-header">
+                    <div class="header-item">
+                        <p>Name</p>
+                    </div>
+                    <div class="header-item">
+                        <p>Quantity</p>
+                    </div>
+                </div>
+
+                <div class="header-item">
+                    <p>Price</p>
+                </div>
+            </div>
+            <!-- End header of calc area -->
+
+            <!-- Begin content -->
+            <div class="content">
+                <!-- Begin tile -->
+                <div class="item-tile">
+                    <div class="number">1</div>
+                    <div class="product-info">
+                        <p class="name">M&M Chocolate</p>
+                        <p class="sku">SKU:04122WH1</p>
+                    </div>
+                    <div class="quantity">
+                        <button class="minus">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <span class="quantity-number">1</span>
+                        <button class="plus">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="price">
+                        <p class="main-price">$32</p>
+                        <p class="secondary-price">$100</p>
+                    </div>
+                </div>
+                <!-- End tile -->
+
+                <!-- Begin tile -->
+                <div class="item-tile">
+                    <div class="number">2</div>
+                    <div class="product-info">
+                        <p class="name">Sea Passion nº2</p>
+                        <p class="sku">SKU:04122WH1</p>
+                    </div>
+                    <div class="quantity">
+                        <button class="minus">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <span class="quantity-number">1</span>
+                        <button class="plus">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="price">
+                        <p class="main-price">$32</p>
+                        <p class="secondary-price">$100</p>
+                    </div>
+                </div>
+                <div class="item-tile">
+                    <div class="number">3</div>
+                    <div class="product-info">
+                        <p class="name">Snickers chocolate</p>
+                        <p class="sku">SKU:04122WH1</p>
+                    </div>
+                    <div class="quantity">
+                        <button class="minus">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <span class="quantity-number">1</span>
+                        <button class="plus">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="price">
+                        <p class="main-price">$32</p>
+                        <p class="secondary-price">$100</p>
+                    </div>
+                </div>
+                <div class="item-tile">
+                    <div class="number">4</div>
+                    <div class="product-info">
+                        <p class="name">Lay’s potato chips Classic</p>
+                        <p class="sku">SKU:04122WH1</p>
+                    </div>
+                    <div class="quantity">
+                        <button class="minus">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <span class="quantity-number">1</span>
+                        <button class="plus">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="price">
+                        <p class="main-price">$32</p>
+                        <p class="secondary-price">$100</p>
+                    </div>
+                </div>
+                <div class="item-tile">
+                    <div class="number">5</div>
+                    <div class="product-info">
+                        <p class="name">KitKat chocolate</p>
+                        <p class="sku">SKU:04122WH1</p>
+                    </div>
+                    <div class="quantity">
+                        <button class="minus">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <span class="quantity-number">1</span>
+                        <button class="plus">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="price">
+                        <p class="main-price">$32</p>
+                        <p class="secondary-price">$100</p>
+                    </div>
+                </div>
+                <!-- End tile -->
+            </div>
+            <!-- End content -->
+
+            <!-- Begin bill detail -->
+            <div class="calculated-detail">
+                <div class="grp-detail">
+                    <div class="detail-item">
+                        <div class="detail-title">Temporary</div>
+                        <div class="detail-content">$424</div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="detail-title">Voucher</div>
+                        <div class="detail-content">
+                            <button class="voucher-btn"><i class="fas fa-percent"></i></button>
+                            <input type="text" class="voucher-txt">
+                        </div>
+                    </div>
+                </div>
+                <div class="grp-detail">
+                    <div class="detail-item">
+                        <div class="detail-title">Total</div>
+                        <div class="detail-content">$412</div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="detail-title">Discount</div>
+                        <div class="detail-content">$12</div>
+                    </div>
+                </div>
+                <div class="grp-detail">
+                    <div class="detail-item">
+                        <div class="detail-title">Received</div>
+                        <div class="detail-content">
+                            <span>$</span><input type="number" class="received-txt">
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="detail-title">Change</div>
+                        <div class="detail-content">$38</div>
+                    </div>
+                </div>
+            </div>
+            <!-- End bill detail -->
+
+            <!-- Manage bills (add and refresh) if one of those bills doesn't have any item => click refresh and that bill tile will be delete -->
+            <div class="bill-manager">
+                <button class="refresh-btn"><i class="fas fa-redo-alt"></i></button>
+                <div class="bill-btn-manager">
+                    <button class="bill-btn">Customer 1</button>
+                    <button class="bill-btn">Customer 2</button>
+                    <button class="bill-btn">Customer 3</button>
+                    <button class="bill-btn">Customer 4</button>
+                    <button class="bill-btn">Customer 5</button>
+                    <button class="bill-btn">Customer 6</button>
+                    <button class="bill-btn">Customer 7</button>
+                    <button class="bill-btn">Customer 8</button>
+                </div>
+                <button class="add-bill-btn"><i class="fas fa-plus"></i></button>
+            </div>
+            <!-- End manage bills -->
+        </div>
+
+    </div>
+    <!--End calc area -->
+</div>
