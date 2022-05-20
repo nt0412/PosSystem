@@ -23,8 +23,12 @@
 
 .employee-info>.name {
     color: #1E9AFE;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
 }
 
 .employee-info>.position {
     color: #45B9D5;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
 }
