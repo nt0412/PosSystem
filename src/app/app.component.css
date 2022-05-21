@@ -6,6 +6,7 @@
 
 body {
     background-color: #F2F6FF;
+    font-size: 16px;
 }
 
 body::-webkit-scrollbar-track {

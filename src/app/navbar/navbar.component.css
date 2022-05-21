@@ -74,6 +74,7 @@
     .toggle {
         color: #087EE1;
         left: -2%;
+        top: -1rem;
     }
     .employee-info .name {
         display: none;

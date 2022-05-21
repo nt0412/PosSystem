@@ -8,18 +8,23 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { CalculatedPageManagerComponent } from './calculated-page-manager/calculated-page-manager.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     SideBarComponent,
-    CalculatedPageManagerComponent
+    CalculatedPageManagerComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FormsModule,
+    FontAwesomeModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
