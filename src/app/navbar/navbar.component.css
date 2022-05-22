@@ -3,12 +3,13 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
+    margin-bottom: 1rem;
 }
 
 .toggle {
     display: flex;
     width: 85px;
-    height: 85px;
+    height: 40px;
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -17,6 +18,7 @@
     font-size: 1.8rem;
     color: #F2F6FF;
     left: -0.5%;
+    top: 0.15rem;
 }
 
 .toggle .close {
@@ -75,6 +77,7 @@
         color: #087EE1;
         left: -2%;
         top: -1rem;
+        height: 85px;
     }
     .employee-info .name {
         display: none;

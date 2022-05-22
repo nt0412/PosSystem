@@ -1,0 +1,28 @@
+.search-area {
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.search-area input {
+    height: 2rem;
+    width: 15rem;
+    border-top-left-radius: 0.7rem;
+    border-bottom-left-radius: 0.7rem;
+    outline: none;
+    border: 0.1rem solid #45B9D5;
+    padding: 0.3rem 0.75rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.search-btn {
+    border: none;
+    height: 2.8rem;
+    width: 3rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #EBEFF8;
+    background-image: linear-gradient(225deg, #1E9AFE, #60DFCD);
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}

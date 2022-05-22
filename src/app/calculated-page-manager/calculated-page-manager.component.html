@@ -21,27 +21,30 @@
             </div>
             <!-- End header of calc area -->
             <!-- Begin content -->
-
             <div class="content" cdkDropList (cdkDropListDropped)="drop($event)">
                 <!-- Begin tile -->
-                <div cdkDragLockAxis="y" cdkDrag class="item-tile" id="tile" *ngFor="let item of tileList; let j = index">
-                    <div class="number">{{j + 1}}</div>
+                <div (dblclick)="deleteTile($event)" cdkDragLockAxis="y" cdkDrag class="item-tile" id="tile" *ngFor="let item of tileList; let j = index">
+                    <div class="number">{{ j + 1 }}</div>
                     <div class="product-info">
-                        <p class="name">{{item.name }}</p>
-                        <p class="sku">{{item.sku}}</p>
+                        <p class="name">{{ item.name }}</p>
+                        <p class="sku">{{ item.sku }}</p>
                     </div>
                     <div class="quantity">
                         <button class="minus" (click)="decreaseQuantity(item)">
                             <i class="fas fa-minus"></i>
                         </button>
-                        <span class="quantity-number"><input type="number" value="{{item.quantity}}"></span>
+                        <span class="quantity-number"><input type="number" value="{{ item.quantity }}" /></span>
                         <button class="plus" (click)="increaseQuantity(item)">
                             <i class="fas fa-plus"></i>
                         </button>
                     </div>
                     <div class="price">
-                        <p class="main-price">{{item.unitPrice*item.quantity | currency:'USD'}}</p>
-                        <p class="secondary-price">{{item.prePrice*item.quantity | currency:'USD'}}</p>
+                        <p class="main-price">
+                            {{ item.unitPrice * item.quantity | currency: "USD" }}
+                        </p>
+                        <p class="secondary-price">
+                            {{ item.prePrice * item.quantity | currency: "USD" }}
+                        </p>
                     </div>
                 </div>
                 <!-- End tile -->
@@ -50,14 +53,16 @@
                     <div class="grp-detail">
                         <div class="detail-item">
                             <div class="detail-title">Temporary</div>
-                            <div class="detail-content">$424</div>
+                            <div class="detail-content">$4233</div>
                         </div>
 
                         <div class="detail-item">
                             <div class="detail-title">Voucher</div>
                             <div class="detail-content">
-                                <button class="voucher-btn"><i class="fas fa-percent"></i></button>
-                                <input type="text" class="voucher-txt">
+                                <button class="voucher-btn">
+                                    <i class="fas fa-percent"></i>
+                                </button>
+                                <input type="text" class="voucher-txt" />
                             </div>
                         </div>
                     </div>
@@ -76,7 +81,7 @@
                         <div class="detail-item">
                             <div class="detail-title">Received</div>
                             <div class="detail-content">
-                                <span>$</span><input type="number" class="received-txt">
+                                <span>$</span><input type="number" class="received-txt" />
                             </div>
                         </div>
 
@@ -87,11 +92,137 @@
                     </div>
                 </div>
                 <!-- End bill detail -->
+
+                <!-- Manage bills (add and refresh) if one of those bills doesn't have any item => click refresh and that bill tile will be delete -->
+                <div class="bill-manager">
+                    <button class="refresh-btn"><i class="fas fa-redo-alt"></i></button>
+                    <div class="bill-btn-manager">
+                        <button class="bill-btn" *ngFor="let i of customerBill; let j = index">
+                            Customer {{ j + 1 }}
+                        </button>
+                    </div>
+                    <button class="add-bill-btn"><i class="fas fa-plus"></i></button>
+                </div>
+                <!-- End manage bills -->
             </div>
             <!-- End content -->
-
         </div>
 
+        <div class="all-btn-manager">
+            <!-- Manage calculator button -->
+            <div class="calculator">
+                <div class="grp-1">
+                    <div class="calc-btn-manager">
+                        <button class="btn-grp-1">%</button>
+                        <button class="btn-grp-1">+/-</button>
+                        <button class="btn-grp-1">,</button>
+                        <button class="btn-grp-1">AC</button>
+                        <button class="btn-grp-1 btn-enter">Enter</button>
+                    </div>
+                </div>
+                <div class="grp-2">
+                    <div class="calc-btn-manager">
+                        <button class="btn-grp-2">0</button>
+                        <button class="btn-grp-2">1</button>
+                        <button class="btn-grp-2">2</button>
+                        <button class="btn-grp-2">3</button>
+                        <button class="btn-grp-2">4</button>
+                        <button class="btn-grp-2">5</button>
+                        <button class="btn-grp-2">6</button>
+                        <button class="btn-grp-2">7</button>
+                        <button class="btn-grp-2">8</button>
+                        <button class="btn-grp-2">9</button>
+                    </div>
+                </div>
+                <div class="grp-3">
+                    <div class="calc-btn-manager">
+                        <button class="btn-grp-3">+</button>
+                        <button class="btn-grp-3">-</button>
+                        <button class="btn-grp-3">x</button>
+                        <button class="btn-grp-3">:</button>
+                    </div>
+                </div>
+            </div>
+            <!-- End manage calculator button -->
+
+            <!-- Manage feature next to calculator -->
+            <div class="feature-button-area">
+                <div class="btn-grp">
+                    <button class="feature-btn">
+                        <div class="button-content">
+                            <div class="btn-icon">
+                                <img src="../../assets/images/feature-btn-icon/save_btn_icon.svg" alt="" />
+                            </div>
+                            Save bill
+                        </div>
+                    </button>
+
+                    <button class="feature-btn feature-special-btn">
+                        <div class="button-content">
+                            <div class="btn-icon">
+                                <img src="../../assets/images/feature-btn-icon/voucher_btn_icon.svg" alt="" />
+                            </div>
+                            Voucher
+                        </div>
+                    </button>
+
+                    <button class="feature-btn">
+                        <div class="button-content">
+                            <div class="btn-icon">
+                                <img src="../../assets/images/feature-btn-icon/add_member_btn_icon.svg" alt="" />
+                            </div>
+                            Add new member
+                        </div>
+                    </button>
+
+                    <button class="feature-btn">
+                        <div class="button-content">
+                            <div class="btn-icon">
+                                <img src="../../assets/images/feature-btn-icon/emergency_btn_icon.svg" alt="" />
+                            </div>
+                            Emergency
+                        </div>
+                    </button>
+                </div>
+                <button class="print-btn">
+                    <div class="print-btn-content">
+                        <i class="fas fa-print" style="font-size: 6rem"></i>Print
+                    </div>
+                </button>
+            </div>
+            <!-- End feature next to calculator -->
+        </div>
     </div>
     <!--End calc area -->
+
+    <!-- Begin Choose area  -->
+    <div class="right-section">
+        <div class="choose-product-area">
+            <app-modal-filter></app-modal-filter>
+            <span class="active"></span>
+            <div class="header">
+                <button class="filter-btn">
+                    <i class="fas fa-filter"></i>
+                </button>
+                <div class="search-area">
+                    <input type="text" placeholder="Searching..." />
+                    <button class="search-btn">
+                        <i class="fab fa-sistrix"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="content">
+                <div class="card-border" *ngFor="let item of productList">
+                    <div class="card-wrapper">
+                        <span class="active"></span>
+                        <div class="card-img">
+                            <img src="{{ item.productImg }}" alt="" />
+                        </div>
+                        <div class="card-title">{{ item.name }}</div>
+                        <div class="card-sku">SKU: {{ item.sku }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

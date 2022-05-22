@@ -1,0 +1,87 @@
+<!-- main -->
+<div class="inventory-page-manager">
+    <!-- inventory header -->
+    <div class="inventory-header">
+        <div class="left-btns">
+            <button class="select-btn">
+                <img src="../../assets/images/inventory-icon/select-icon.svg" alt="">
+                Select
+            </button>
+
+            <button class="delete-btn">
+                <img src="../../assets/images/inventory-icon/cancel-icon.svg" alt="">
+                Delete
+            </button>
+
+            <button class="add-btn">
+                <img src="../../assets/images/inventory-icon/add-icon.svg" alt="">
+                Add item
+            </button>
+        </div>
+        <app-search-area></app-search-area>
+    </div>
+    <!-- end inventory header -->
+
+    <!-- begin inventory table -->
+    <div class="col-md-12">
+        <div class="scrolling-table">
+            <table class="inventory-table">
+                <thead>
+                    <th>SKU</th>
+                    <th>Name</th>
+                    <th>Brand</th>
+                    <th>Class</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                    <th>Unit</th>
+                    <th>Unit price</th>
+                    <th>Action</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of productList">
+                        <td class="inventory-sku" data-label="SKU">{{ item.sku }}</td>
+                        <td class="inventory-name" data-label="Name">
+                            <p>{{ item.name }}</p>
+                        </td>
+                        <td class="inventory-brand" data-label="Brand">
+                            <p>{{ item.brand }}</p>
+                        </td>
+                        <td class="inventory-class" data-label="Class">
+                            <p>{{ item.class }}</p>
+                        </td>
+                        <td class="inventory-category" data-label="Category">
+                            <p>{{ item.category }}</p>
+                        </td>
+                        <td class="inventory-quantity" data-label="Quantity">
+                            {{ item.quantity }}
+                        </td>
+                        <td class="inventory-unit" data-label="Unit">{{ item.unit }}</td>
+                        <td class="inventory-unit-price" data-label="Unit price">
+                            {{ item.unitPrice }}
+                        </td>
+                        <td class="inventory-action" data-label="Action">
+                            <button class="delete-btn">
+                                <img src="../../assets/images/inventory-delete.svg" alt="" />
+                            </button>
+                            <button class="edit-btn">
+                                <img src="../../assets/images/inventory-edit.svg" alt="" />
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+
+
+            </table>
+            <div class="selection">
+                <button class="select-all-btn">
+                    Select all
+                </button>
+                <button class="delete-all-btn">
+                    Delete all
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- end inventory table -->
+</div>
+<!-- end -->

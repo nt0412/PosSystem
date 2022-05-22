@@ -1,0 +1,19 @@
+<div class="modal-wrapper">
+    <button class="close-modal-btn">
+        <i class="fas fa-times close"></i>
+    </button>
+
+    <div class="model-title">
+        <p>Choose type</p>
+    </div>
+    <div class="type-grid">
+        <div class="type-item" *ngFor="let item of typeList">
+            <div class="type-icon">
+                <img src="{{item.typeIcon}}" alt="">
+            </div>
+            <div class="type-name">
+                <p>{{item.typeName | titlecase}}</p>
+            </div>
+        </div>
+    </div>
+</div>

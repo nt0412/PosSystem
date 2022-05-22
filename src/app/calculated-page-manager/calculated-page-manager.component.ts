@@ -7,9 +7,74 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calculated-page-manager.component.css'],
 })
 export class CalculatedPageManagerComponent implements OnInit {
+  public productList: any[] = [
+    {
+      sku: 'WDD234233',
+      name: 'Sea Passion nº2',
+      price: 100,
+      quantity: 1000,
+      productImg: '../../assets/images/products/1.png',
+    },
+    {
+      sku: 'WDD234233',
+      name: 'Snickers chocolate',
+      price: 100,
+      quantity: 1000,
+      productImg: '../../assets/images/products/2.jpg',
+    },
+    {
+      sku: 'WDD234233',
+      name: 'Lay’s potato chips Classic',
+      price: 100,
+      quantity: 1000,
+      productImg: '../../assets/images/products/3.jpg',
+    },
+    {
+      sku: 'WDD234233',
+      name: 'Hao Hao Noodle',
+      price: 100,
+      quantity: 1000,
+      productImg: '../../assets/images/products/4.png',
+    },
+    {
+      sku: 'WDD234233',
+      name: 'KitKat chocolate',
+      price: 100,
+      quantity: 1000,
+      productImg: '../../assets/images/products/5.jpg',
+    },
+    {
+      sku: 'WDD234233',
+      name: 'Lay’s potato chips Wavy',
+      price: 100,
+      quantity: 1000,
+      productImg: '../../assets/images/products/6.jpg',
+    },
+    {
+      sku: 'WDD234233',
+      name: 'Sea Passion nº2',
+      price: 100,
+      quantity: 1000,
+      productImg: '../../assets/images/products/1.png',
+    },
+    {
+      sku: 'WDD234233',
+      name: 'Snickers chocolate',
+      price: 100,
+      quantity: 1000,
+      productImg: '../../assets/images/products/2.jpg',
+    },
+  ];
+  public customerBill: any[] = [
+    { customerOrderNum: 1 },
+    { customerOrderNum: 2 },
+    { customerOrderNum: 3 },
+    { customerOrderNum: 4 },
+    { customerOrderNum: 5 },
+    { customerOrderNum: 6 },
+  ];
   public tileList: any[] = [
     {
-      orderNum: 1,
       name: 'M&M Chocolate',
       sku: '04122WH1',
       quantity: 3,
@@ -17,7 +82,6 @@ export class CalculatedPageManagerComponent implements OnInit {
       prePrice: 20,
     },
     {
-      orderNum: 2,
       name: 'Hao Hao Noodles',
       sku: '01222SWH1',
       quantity: 4,
@@ -25,7 +89,13 @@ export class CalculatedPageManagerComponent implements OnInit {
       prePrice: 20,
     },
     {
-      orderNum: 3,
+      name: 'Hao Hao Noodles',
+      sku: '01222SWH1',
+      quantity: 1,
+      unitPrice: 10,
+      prePrice: 20,
+    },
+    {
       name: 'Hao Hao Noodles',
       sku: '01222SWH1',
       quantity: 1,
@@ -45,7 +115,34 @@ export class CalculatedPageManagerComponent implements OnInit {
   drop(event: CdkDragDrop<any[]>) {
     moveItemInArray(this.tileList, event.previousIndex, event.currentIndex);
   }
+  deleteTile(event: any) {
+    this.tileList.splice(event.currentIndex, 1);
+  }
 
+  public temporary: number = 0;
+  public voucher: any[] = [
+    {
+      voucherID: '001',
+      moneyDiscount: '10',
+      validDate: '2022-01-01',
+      expiredDate: '2022-04-01',
+    },
+    {
+      voucherID: '0321',
+      moneyDiscount: '10',
+      validDate: '2022-01-01',
+      expiredDate: '2022-04-01',
+    },
+  ];
+  public total: number = 0;
+  public discount: number = 0;
+  public received: number = 0;
+  public change: number = 0;
+
+  changeMoney(event: any) {
+    this.received = event.target.value;
+    this.change = this.received - this.total;
+  }
   constructor() {}
 
   ngOnInit(): void {}

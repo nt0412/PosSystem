@@ -1,0 +1,111 @@
+<!-- main -->
+<div class="statistic-page-manager">
+    <!-- begin statistic cards -->
+    <div class="statistic-card-area">
+        <div class="statistic-card total-money">
+            <div class="icon">
+                <img src="../../assets/images/statistic-icon/money.svg" alt="">
+            </div>
+            <div class="statistic-data">
+                <div class="title">
+                    Total money
+                </div>
+                <div class="content">
+                    $2500
+                </div>
+            </div>
+        </div>
+        <div class="statistic-card products-have-sold">
+            <div class="icon">
+                <img src="../../assets/images/statistic-icon/product-have-sold.svg" alt="">
+            </div>
+            <div class="statistic-data">
+                <div class="title">
+                    Products have sold
+                </div>
+                <div class="content">
+                    160
+                </div>
+            </div>
+        </div>
+        <div class="statistic-card customer-visited">
+            <div class="icon">
+                <img src="../../assets/images/statistic-icon/customer-visited.svg" alt="">
+            </div>
+            <div class="statistic-data">
+                <div class="title">
+                    Customer visited
+                </div>
+                <div class="content">
+                    40
+                </div>
+            </div>
+        </div>
+        <div class="statistic-card have-opened">
+            <div class="icon">
+                <img src="../../assets/images/statistic-icon/time.svg" alt="">
+            </div>
+            <div class="statistic-data">
+                <div class="title">
+                    Have opened
+                </div>
+                <div class="content">
+                    10:52:03
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end statistic cards -->
+    <div class="bottom-section">
+        <!-- begin transaction table -->
+        <div class="scrolling-table">
+            <table class="transaction-table">
+                <thead>
+                    <th>#</th>
+                    <th>Transaction code</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Value</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of transactionList; let i = index">
+                        <td class="transaction-number" data-label="#">{{i+1}}</td>
+                        <td class="transaction-code" data-label="Transaction code">{{item.transactionCode | uppercase}}</td>
+                        <td class="transaction-date" data-label="Date">{{item.date}}</td>
+                        <td class="transaction-time" data-label="Time">{{item.time}}</td>
+                        <td class="transaction-value" data-label="Value">$29,009.12</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- end transaction table -->
+        <!-- begin task area -->
+        <div class="task-area">
+            <div class="task-area-header">
+                <div class="task-text">Task</div>
+            </div>
+
+            <div class="task-content-manager" cdkDropList (cdkDropListDropped)="drop($event)">
+                <div cdkDragLockAxis="y" cdkDrag class="task-tile" *ngFor="let item of taskList">
+                    <div class="task-icon-color" style="color: #FC5B5B; ">
+                        <i class="fa-solid fa-circle"></i>
+                    </div>
+                    <div class="task-content">
+                        <div class="title">
+                            {{item.taskTitle}}
+                        </div>
+                        <div class="note">
+                            {{item.taskNote}}
+                        </div>
+                    </div>
+                    <div class="time-order">
+                        {{item.time}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end task area -->
+    </div>
+
+</div>
+<!-- end -->

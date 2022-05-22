@@ -32,7 +32,8 @@
                             "node_modules/bootstrap/dist/css/bootstrap-grid.min.css"
                         ],
                         "scripts": [
-                            "src/assets/js/side-bar.js"
+                            "src/assets/js/side-bar.js",
+                            "src/assets/js/appearFilter.js"
                         ]
                     },
                     "configurations": {

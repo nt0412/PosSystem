@@ -10,6 +10,10 @@ import { CalculatedPageManagerComponent } from './calculated-page-manager/calcul
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ModalFilterComponent } from './calculated-page-manager/modal-filter/modal-filter.component';
+import { InventoryComponent } from './inventory/inventory.component';
+import { SearchAreaComponent } from './search-area/search-area.component';
+import { StatisticComponent } from './statistic/statistic.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     NavbarComponent,
     SideBarComponent,
     CalculatedPageManagerComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ModalFilterComponent,
+    InventoryComponent,
+    SearchAreaComponent,
+    StatisticComponent
   ],
   imports: [
     BrowserModule,
