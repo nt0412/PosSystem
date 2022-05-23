@@ -21,9 +21,9 @@
             </div>
             <!-- End header of calc area -->
             <!-- Begin content -->
-            <div class="content" cdkDropList (cdkDropListDropped)="drop($event)">
+            <div class="content" cdkDropList (cdkDropListDropped)="deleteTile($event)">
                 <!-- Begin tile -->
-                <div (dblclick)="deleteTile($event)" cdkDragLockAxis="y" cdkDrag class="item-tile" id="tile" *ngFor="let item of tileList; let j = index">
+                <div cdkDragLockAxis="x" cdkDrag class="item-tile" id="tile" *ngFor="let item of tileList; let j = index">
                     <div class="number">{{ j + 1 }}</div>
                     <div class="product-info">
                         <p class="name">{{ item.name }}</p>
@@ -40,10 +40,10 @@
                     </div>
                     <div class="price">
                         <p class="main-price">
-                            {{ item.unitPrice * item.quantity | currency: "USD" }}
+                            {{ item.afterPrice * item.quantity | currency: "USD" }}
                         </p>
                         <p class="secondary-price">
-                            {{ item.prePrice * item.quantity | currency: "USD" }}
+                            {{ item.unitPrice * item.quantity | currency: "USD" }}
                         </p>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                     <div class="grp-detail">
                         <div class="detail-item">
                             <div class="detail-title">Temporary</div>
-                            <div class="detail-content">$4233</div>
+                            <div class="detail-content">{{temporary | currency: "USD"}}</div>
                         </div>
 
                         <div class="detail-item">
@@ -69,25 +69,25 @@
                     <div class="grp-detail">
                         <div class="detail-item">
                             <div class="detail-title">Total</div>
-                            <div class="detail-content">$412</div>
+                            <div class="detail-content">{{total | currency: "USD"}}</div>
                         </div>
 
                         <div class="detail-item">
                             <div class="detail-title">Discount</div>
-                            <div class="detail-content">$12</div>
+                            <div class="detail-content">{{discount | currency: "USD"}}</div>
                         </div>
                     </div>
                     <div class="grp-detail">
                         <div class="detail-item">
                             <div class="detail-title">Received</div>
                             <div class="detail-content">
-                                <span>$</span><input type="number" class="received-txt" />
+                                <span>$</span><input type="number" class="received-txt" [(ngModel)]="received" />
                             </div>
                         </div>
 
                         <div class="detail-item">
                             <div class="detail-title">Change</div>
-                            <div class="detail-content">$38</div>
+                            <div class="detail-content">{{changed | currency: "USD"}}</div>
                         </div>
                     </div>
                 </div>

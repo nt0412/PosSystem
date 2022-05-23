@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calculated-page-manager.component.css'],
 })
 export class CalculatedPageManagerComponent implements OnInit {
+  
   public productList: any[] = [
     {
       sku: 'WDD234233',
@@ -78,29 +79,29 @@ export class CalculatedPageManagerComponent implements OnInit {
       name: 'M&M Chocolate',
       sku: '04122WH1',
       quantity: 3,
-      unitPrice: 10,
-      prePrice: 20,
+      unitPrice: 50,
+      afterPrice: 20,
     },
     {
       name: 'Hao Hao Noodles',
       sku: '01222SWH1',
       quantity: 4,
-      unitPrice: 10,
-      prePrice: 20,
+      unitPrice: 50,
+      afterPrice: 20,
     },
     {
       name: 'Hao Hao Noodles',
       sku: '01222SWH1',
       quantity: 1,
-      unitPrice: 10,
-      prePrice: 20,
+      unitPrice: 50,
+      afterPrice: 20,
     },
     {
       name: 'Hao Hao Noodles',
       sku: '01222SWH1',
       quantity: 1,
-      unitPrice: 10,
-      prePrice: 20,
+      unitPrice: 50,
+      afterPrice: 20,
     },
   ];
 
@@ -112,14 +113,12 @@ export class CalculatedPageManagerComponent implements OnInit {
     item.quantity++;
   }
 
-  drop(event: CdkDragDrop<any[]>) {
-    moveItemInArray(this.tileList, event.previousIndex, event.currentIndex);
-  }
-  deleteTile(event: any) {
+  deleteTile(event: CdkDragDrop<any[]>) {
     this.tileList.splice(event.currentIndex, 1);
   }
 
-  public temporary: number = 0;
+
+  public temporary: any = 0;
   public voucher: any[] = [
     {
       voucherID: '001',
@@ -134,16 +133,25 @@ export class CalculatedPageManagerComponent implements OnInit {
       expiredDate: '2022-04-01',
     },
   ];
-  public total: number = 0;
   public discount: number = 0;
+  public total: number = 0;
   public received: number = 0;
-  public change: number = 0;
+  public changed: number = 0;
 
-  changeMoney(event: any) {
-    this.received = event.target.value;
-    this.change = this.received - this.total;
-  }
+  // changeMoney(event: any) {
+  //   this.received = event.target.value;
+  //   this.change = this.received - this.total;
+  // }
   constructor() {}
+  public name: string = 'Thuan';
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    for (let i = 0; i < this.tileList.length; i++) {
+      this.temporary += this.tileList[i].unitPrice*this.tileList[i].quantity;
+      this.total += this.tileList[i].afterPrice*this.tileList[i].quantity - this.discount;
+      this.changed = this.received - this.total;
+    }
+    console.log(this.received);
+    
+  }
 }

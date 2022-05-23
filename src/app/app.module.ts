@@ -14,6 +14,7 @@ import { ModalFilterComponent } from './calculated-page-manager/modal-filter/mod
 import { InventoryComponent } from './inventory/inventory.component';
 import { SearchAreaComponent } from './search-area/search-area.component';
 import { StatisticComponent } from './statistic/statistic.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { StatisticComponent } from './statistic/statistic.component';
     AppRoutingModule,
     FormsModule,
     FontAwesomeModule,
-    DragDropModule
+    DragDropModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./inventory.component.css'],
 })
 export class InventoryComponent implements OnInit {
+  searchText: any;
   public productList: any[] = [
     {
       sku: '123',
@@ -14,7 +15,7 @@ export class InventoryComponent implements OnInit {
       class: 'Class 1',
       category: 'Category 1',
       quantity: 10,
-      unit: "bar",
+      unit: "Kg",
       unitPrice: 100,
     },
     {

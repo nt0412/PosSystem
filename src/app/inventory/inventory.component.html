@@ -18,7 +18,12 @@
                 Add item
             </button>
         </div>
-        <app-search-area></app-search-area>
+        <div class="search-area">
+            <input type="text" name="search" [(ngModel)]="searchText" placeholder="Searching..." />
+            <button class="search-btn">
+                <i class="fab fa-sistrix"></i>
+            </button>
+        </div>
     </div>
     <!-- end inventory header -->
 
@@ -38,7 +43,7 @@
                     <th>Action</th>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let item of productList">
+                    <tr *ngFor="let item of productList | filter:searchText">
                         <td class="inventory-sku" data-label="SKU">{{ item.sku }}</td>
                         <td class="inventory-name" data-label="Name">
                             <p>{{ item.name }}</p>
