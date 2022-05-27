@@ -59,16 +59,25 @@
     <div class="bottom-section">
         <!-- begin transaction table -->
         <div class="scrolling-table">
+
             <table class="transaction-table">
+                <pagination-controls class="my-pagination" previousLabel=" " nextLabel=" " (pageChange)="p = $event"></pagination-controls>
+                <div class="search-area">
+                    <input type="text" name="search" [(ngModel)]="searchText" placeholder="Searching..." />
+                    <button class="search-btn">
+                            <i class="fab fa-sistrix"></i>
+                        </button>
+                </div>
+
                 <thead>
                     <th>#</th>
-                    <th>Transaction code</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Value</th>
+                    <th (click)="sort('transactionCode')">Transaction code&nbsp;&nbsp;<i class="fa fa-sort"></i></th>
+                    <th (click)="sort('date')">Date&nbsp;&nbsp;<i class="fa fa-sort"></i></th>
+                    <th (click)="sort('time')">Time&nbsp;&nbsp;<i class="fa fa-sort"></i></th>
+                    <th (click)="sort('value')">Value&nbsp;&nbsp;<i class="fa fa-sort"></i></th>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let item of transactionList; let i = index">
+                    <tr *ngFor="let item of transactionList | filter :searchText | orderBy: key: reverse |orderBy: key: reverse | paginate: {itemsPerPage:6, currentPage:p};; let i = index">
                         <td class="transaction-number" data-label="#">{{i+1}}</td>
                         <td class="transaction-code" data-label="Transaction code">{{item.transactionCode | uppercase}}</td>
                         <td class="transaction-date" data-label="Date">{{item.date}}</td>

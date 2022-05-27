@@ -15,6 +15,8 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { SearchAreaComponent } from './search-area/search-area.component';
 import { StatisticComponent } from './statistic/statistic.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { OrderModule } from 'ngx-order-pipe';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     FormsModule,
     FontAwesomeModule,
     DragDropModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    OrderModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

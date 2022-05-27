@@ -205,14 +205,14 @@
                     <i class="fas fa-filter"></i>
                 </button>
                 <div class="search-area">
-                    <input type="text" placeholder="Searching..." />
+                    <input type="text" [(ngModel)]="searchText" placeholder="Searching..." />
                     <button class="search-btn">
                         <i class="fab fa-sistrix"></i>
                     </button>
                 </div>
             </div>
             <div class="content">
-                <div class="card-border" *ngFor="let item of productList">
+                <div class="card-border" *ngFor="let item of productList | filter:searchText">
                     <div class="card-wrapper">
                         <span class="active"></span>
                         <div class="card-img">

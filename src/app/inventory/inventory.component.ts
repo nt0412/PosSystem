@@ -7,19 +7,70 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InventoryComponent implements OnInit {
   searchText: any;
+  p:number = 1;
   public productList: any[] = [
     {
-      sku: '123',
-      name: 'Product 1',
-      brand: 'Brand 1',
-      class: 'Class 1',
-      category: 'Category 1',
+      sku: 'SKQDS',
+      name: 'Coca Cola',
+      brand: 'Coca Cola',
+      class: 'Soda',
+      category: 'drinks',
       quantity: 10,
-      unit: "Kg",
-      unitPrice: 100,
+      unit: "Bottle",
+      unitPrice: 10,
     },
     {
-      sku: '1234',
+      sku: '2KWWDS',
+      name: 'Snickers Chocolate',
+      brand: 'Snickers',
+      class: 'Chocolate',
+      category: 'sweet, candy',
+      quantity: 10,
+      unit: "bar",
+      unitPrice: 20,
+    },
+    {
+      sku: 'WDFSD',
+      name: 'M&M Chocolate Candies - Milk',
+      brand: 'M&M',
+      class: 'Chocolate',
+      category: 'sweet, candies',
+      quantity: 10,
+      unit: "bar",
+      unitPrice: 30,
+    },
+    {
+      sku: 'EFSCS',
+      name: 'Product 2',
+      brand: 'Brand 2',
+      class: 'Class 2',
+      category: 'Category 2',
+      quantity: 10,
+      unit: "bar",
+      unitPrice: 40,
+    },
+    {
+      sku: 'ADJHJS',
+      name: 'Product 2',
+      brand: 'Brand 2',
+      class: 'Class 2',
+      category: 'Category 2',
+      quantity: 10,
+      unit: "bar",
+      unitPrice: 50,
+    },
+    {
+      sku: 'WRSDSA',
+      name: 'Product 2',
+      brand: 'Brand 2',
+      class: 'Class 2',
+      category: 'Category 2',
+      quantity: 10,
+      unit: "bar",
+      unitPrice: 60,
+    },
+    {
+      sku: 'SSTTGF',
       name: 'Product 2',
       brand: 'Brand 2',
       class: 'Class 2',
@@ -29,67 +80,17 @@ export class InventoryComponent implements OnInit {
       unitPrice: 100,
     },
     {
-      sku: '1234',
+      sku: 'PJHJKS',
       name: 'Product 2',
       brand: 'Brand 2',
       class: 'Class 2',
       category: 'Category 2',
       quantity: 10,
       unit: "bar",
-      unitPrice: 100,
+      unitPrice: 90,
     },
     {
-      sku: '1234',
-      name: 'Product 2',
-      brand: 'Brand 2',
-      class: 'Class 2',
-      category: 'Category 2',
-      quantity: 10,
-      unit: "bar",
-      unitPrice: 100,
-    },
-    {
-      sku: '1234',
-      name: 'Product 2',
-      brand: 'Brand 2',
-      class: 'Class 2',
-      category: 'Category 2',
-      quantity: 10,
-      unit: "bar",
-      unitPrice: 100,
-    },
-    {
-      sku: '1234',
-      name: 'Product 2',
-      brand: 'Brand 2',
-      class: 'Class 2',
-      category: 'Category 2',
-      quantity: 10,
-      unit: "bar",
-      unitPrice: 100,
-    },
-    {
-      sku: '1234',
-      name: 'Product 2',
-      brand: 'Brand 2',
-      class: 'Class 2',
-      category: 'Category 2',
-      quantity: 10,
-      unit: "bar",
-      unitPrice: 100,
-    },
-    {
-      sku: '1234',
-      name: 'Product 2',
-      brand: 'Brand 2',
-      class: 'Class 2',
-      category: 'Category 2',
-      quantity: 10,
-      unit: "bar",
-      unitPrice: 100,
-    },
-    {
-      sku: '1234',
+      sku: 'PPJBVK',
       name: 'Product 2',
       brand: 'Brand 2',
       class: 'Class 2',
@@ -102,4 +103,11 @@ export class InventoryComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  key:string = 'id';
+  reverse:boolean = false;
+  sort(key: any){
+    this.key=key;
+    this.reverse =!this.reverse;
+  }
 }

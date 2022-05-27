@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calculated-page-manager.component.css'],
 })
 export class CalculatedPageManagerComponent implements OnInit {
-  
+  public searchText:any;
   public productList: any[] = [
     {
       sku: 'WDD234233',
@@ -143,7 +143,6 @@ export class CalculatedPageManagerComponent implements OnInit {
   //   this.change = this.received - this.total;
   // }
   constructor() {}
-  public name: string = 'Thuan';
 
   ngOnInit(): void {
     for (let i = 0; i < this.tileList.length; i++) {

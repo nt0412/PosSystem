@@ -32,18 +32,18 @@
         <div class="scrolling-table">
             <table class="inventory-table">
                 <thead>
-                    <th>SKU</th>
-                    <th>Name</th>
-                    <th>Brand</th>
-                    <th>Class</th>
-                    <th>Category</th>
-                    <th>Quantity</th>
-                    <th>Unit</th>
-                    <th>Unit price</th>
+                    <th (click)="sort('sku')">SKU&nbsp;&nbsp;<i class="fa fa-sort"></i></th>
+                    <th (click)="sort('name')">Name&nbsp;&nbsp;<i class="fa fa-sort"></i></th>
+                    <th (click)="sort('brand')">Brand&nbsp;&nbsp;<i class="fa fa-sort"></i></th>
+                    <th (click)="sort('class')">Class&nbsp;&nbsp;<i class="fa fa-sort"></i></th>
+                    <th (click)="sort('category')">Category&nbsp;&nbsp;<i class="fa fa-sort"></i></th>
+                    <th (click)="sort('quantity')">Quantity&nbsp;&nbsp;<i class="fa fa-sort"></i></th>
+                    <th (click)="sort('unit')">Unit&nbsp;&nbsp;<i class="fa fa-sort"></i></th>
+                    <th (click)="sort('unitPrice')">Unit price&nbsp;&nbsp;<i class="fa fa-sort"></i></th>
                     <th>Action</th>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let item of productList | filter:searchText">
+                    <tr *ngFor="let item of productList | filter:searchText | orderBy: key: reverse | paginate: {itemsPerPage:6, currentPage:p};">
                         <td class="inventory-sku" data-label="SKU">{{ item.sku }}</td>
                         <td class="inventory-name" data-label="Name">
                             <p>{{ item.name }}</p>
@@ -60,7 +60,9 @@
                         <td class="inventory-quantity" data-label="Quantity">
                             {{ item.quantity }}
                         </td>
-                        <td class="inventory-unit" data-label="Unit">{{ item.unit }}</td>
+                        <td class="inventory-unit" data-label="Unit">
+                            {{ item.unit | titlecase}}
+                        </td>
                         <td class="inventory-unit-price" data-label="Unit price">
                             {{ item.unitPrice }}
                         </td>
@@ -74,8 +76,6 @@
                         </td>
                     </tr>
                 </tbody>
-
-
             </table>
             <div class="selection">
                 <button class="select-all-btn">
@@ -88,5 +88,6 @@
         </div>
     </div>
     <!-- end inventory table -->
+    <pagination-controls style="display: flex; justify-content: center; font-family: 'Roboto'; margin-top: 2rem;" (pageChange)="p = $event"></pagination-controls>
 </div>
 <!-- end -->
