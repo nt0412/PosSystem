@@ -64,3 +64,10 @@
     color: #00BFB2;
     margin: 0;
 }
+
+@media screen and (max-width: 1080px) {
+    .modal-wrapper {
+        transform: scale(0.6);
+        left: 6%;
+    }
+}

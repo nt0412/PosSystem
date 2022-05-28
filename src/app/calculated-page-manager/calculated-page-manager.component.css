@@ -14,7 +14,7 @@
 .choose-product-area {
     background-color: #F8F8F8;
     border-radius: 1.2rem;
-    height: 39.5rem;
+    height: 42rem;
     margin-top: 0.75rem;
 }
 
@@ -190,7 +190,7 @@ input[type=number] {
     bottom: 3rem;
     right: 0.7rem;
     left: 0.7rem;
-    height: 9rem;
+    height: 15rem;
     display: flex;
     flex-direction: column;
     background-color: #fff;
@@ -473,7 +473,7 @@ input[type=number] {
     background-color: #222222;
     margin-top: 0.5rem;
     height: fit-content;
-    width: 42rem;
+    width: 45rem;
     border-radius: 1rem;
     align-items: center;
     padding: 1rem 1.2rem;
@@ -584,7 +584,7 @@ input[type=number] {
 }
 
 .search-area input {
-    height: 2rem;
+    height: 3rem;
     width: 15rem;
     border-top-left-radius: 0.7rem;
     border-bottom-left-radius: 0.7rem;
@@ -596,7 +596,7 @@ input[type=number] {
 
 .search-btn {
     border: none;
-    height: 2.8rem;
+    height: 3rem;
     width: 3rem;
     font-size: 1.5rem;
     font-weight: 700;
@@ -664,7 +664,7 @@ input[type=number] {
     height: auto;
     z-index: 2;
     padding: 0.75rem 1.25rem;
-    width: 15rem;
+    width: 17rem;
 }
 
 .choose-product-area .content .card-wrapper .card-img {
@@ -727,9 +727,9 @@ input[type=number] {
         gap: 0.5rem;
     }
     .choose-product-area .content {
-        display: grid;
-        grid-template-columns: auto auto auto;
-        grid-gap: 1.2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         height: 85%;
         overflow-y: scroll;
         overflow-x: scroll;
@@ -739,14 +739,11 @@ input[type=number] {
         width: 14rem;
     }
     .choose-product-area .content .card-wrapper {
-        width: 11.5rem;
+        width: 13.5rem;
     }
     .card-title,
     .card-sku {
         width: 10rem;
         font-size: 1rem;
-    }
-    .choose-product-area .content {
-        justify-content: space-evenly;
     }
 }

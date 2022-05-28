@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +17,14 @@ import { StatisticComponent } from './statistic/statistic.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { OrderModule } from 'ngx-order-pipe';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { SharedService } from './shared.service';
+import { HttpClientModule } from '@angular/common/http';
+import { BrandComponent } from './brand/brand.component';
+import { ShowBrandComponent } from './brand/show-brand/show-brand.component';
+import { AddEditBrandComponent } from './brand/add-edit-brand/add-edit-brand.component';
+import { ClassComponent } from './class/class.component';
+import { AddEditClassComponent } from './class/add-edit-class/add-edit-class.component';
+import { ShowClassComponent } from './class/show-class/show-class.component';
 
 @NgModule({
   declarations: [
@@ -28,19 +36,27 @@ import {NgxPaginationModule} from 'ngx-pagination';
     ModalFilterComponent,
     InventoryComponent,
     SearchAreaComponent,
-    StatisticComponent
+    StatisticComponent,
+    BrandComponent,
+    ShowBrandComponent,
+    AddEditBrandComponent,
+    ClassComponent,
+    AddEditClassComponent,
+    ShowClassComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     FontAwesomeModule,
     DragDropModule,
     Ng2SearchPipeModule,
     OrderModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
