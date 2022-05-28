@@ -5,16 +5,12 @@
     </div>
 </div>
 
-<div class="d-flex justify-content-between mt-3 px-5">
+<div class="d-flex justify-content-center mt-3">
     <button (click)="addBrand() " *ngIf="brand.Id==0 " class="btn btn-primary ">
         Add
     </button>
 
     <button (click)="updateBrand() " *ngIf="brand.Id!=0 " class="btn btn-primary ">
         Update
-    </button>
-
-    <button data-bs-dismiss="modal" aria-label="Close" class="btn btn-primary ">
-        Done
     </button>
 </div>

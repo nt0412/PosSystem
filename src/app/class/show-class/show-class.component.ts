@@ -9,11 +9,11 @@ import { SharedService } from 'src/app/shared.service';
 export class ShowClassComponent implements OnInit {
 
   constructor(private service: SharedService) {}
-  BrandList:any = [];
+  ClassList:any = [];
 
   ModalTitle:string = '';
-  ActiveAddEditBrandComp:boolean = false;
-  brand:any;
+  ActiveAddEditClassComp:boolean = false;
+  class:any;
   
   searchText: any;
   p:number = 1;
@@ -29,30 +29,29 @@ export class ShowClassComponent implements OnInit {
   }
 
   addClick() {
-    this.brand = {
+    this.class = {
       Id: 0,
       Name: '',
     };
-    this.ModalTitle = 'Add Brand';
-    this.ActiveAddEditBrandComp = true;
-    console.log(this.brand);
+    this.ModalTitle = 'Add Class';
+    this.ActiveAddEditClassComp = true;
   }
 
   closeClick() {
-    this.ActiveAddEditBrandComp = false;
+    this.ActiveAddEditClassComp = false;
     this.refreshList();
   }
 
   editClick(item: any) {
-    this.brand = item;
-    this.ModalTitle = 'Edit Brand';
-    this.ActiveAddEditBrandComp = true;
+    this.class = item;
+    this.ModalTitle = 'Edit Class';
+    this.ActiveAddEditClassComp = true;
     console.log(item);
   }
 
   deleteClick(item: any){
-    if(confirm('Are you sure to delete this brand?')){
-      this.service.deleteBrand(item.Id).subscribe(data => {
+    if(confirm('Are you sure to delete this class?')){
+      this.service.deleteClass(item.Id).subscribe(data => {
         alert(data.toString());
         this.refreshList();
       });
@@ -60,8 +59,8 @@ export class ShowClassComponent implements OnInit {
   }
 
   refreshList() {
-    this.service.getBrandList().subscribe((data) => {
-      this.BrandList = data;
+    this.service.getClassList().subscribe((data) => {
+      this.ClassList = data;
     });
   }
 

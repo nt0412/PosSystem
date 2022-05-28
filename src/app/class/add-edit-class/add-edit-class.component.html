@@ -1,1 +1,17 @@
-<p>add-edit-class works!</p>
+<div class="form-group row justify-content-center align-items-center">
+    <label class=" col-sm-3 col-form-lable ">Class Name</label>
+    <div class="col-sm-7 ">
+        <input type="text " class="form-control " placeholder="Enter class name " [(ngModel)]="Name ">
+    </div>
+</div>
+
+<div class="d-flex justify-content-center mt-3">
+    <button (click)="addClass() " *ngIf="class.Id==0 " class="btn btn-primary ">
+        Add
+    </button>
+
+    <button (click)="updateClass() " *ngIf="class.Id!=0 " class="btn btn-primary ">
+        Update
+    </button>
+
+</div>

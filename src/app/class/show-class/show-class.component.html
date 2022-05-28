@@ -24,7 +24,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeClick()"></button>
                 </div>
                 <div class="modal-body">
-                    <app-add-edit-brand [brand]="brand" *ngIf="ActiveAddEditBrandComp"></app-add-edit-brand>
+                    <app-add-edit-class [class]="class" *ngIf="ActiveAddEditClassComp"></app-add-edit-class>
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@
                     <th>Action</th>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let item of BrandList | filter:searchText | orderBy: key: reverse | paginate: {itemsPerPage:10, currentPage:p};">
+                    <tr *ngFor="let item of ClassList | filter:searchText | orderBy: key: reverse | paginate: {itemsPerPage:10, currentPage:p};">
 
                         <td class="inventory-name " data-label="Name ">
                             <p>{{item.Id}}</p>

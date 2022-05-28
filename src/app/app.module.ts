@@ -25,6 +25,7 @@ import { AddEditBrandComponent } from './brand/add-edit-brand/add-edit-brand.com
 import { ClassComponent } from './class/class.component';
 import { AddEditClassComponent } from './class/add-edit-class/add-edit-class.component';
 import { ShowClassComponent } from './class/show-class/show-class.component';
+import { AddEditProductComponent } from './inventory/add-edit-product/add-edit-product.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ShowClassComponent } from './class/show-class/show-class.component';
     AddEditBrandComponent,
     ClassComponent,
     AddEditClassComponent,
-    ShowClassComponent
+    ShowClassComponent,
+    AddEditProductComponent
   ],
   imports: [
     BrowserModule,

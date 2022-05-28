@@ -10,33 +10,35 @@ export class AddEditClassComponent implements OnInit {
 
   constructor(private service: SharedService) {}
 
-  @Input() brand: any;
+  @Input() class: any;
   Id: string;
   Name: string;
 
   ngOnInit(): void {
-    this.Id = this.brand.Id;
-    this.Name = this.brand.Name;
+    this.Id = this.class.Id;
+    this.Name = this.class.Name;
   }
 
-  addBrand() {
+  addClass() {
     var val = {
       Id: this.Id,
       Name: this.Name,
     };
 
-    this.service.addBrand(val).subscribe((res) => {
+    console.log(val);
+
+    this.service.addClass(val).subscribe((res) => {
       alert(res.toString());
     });
   }
 
-  updateBrand() {
+  updateClass() {
     var val = {
       Id: this.Id,
       Name: this.Name,
     };
 
-    this.service.updateBrand(val).subscribe((res) => {
+    this.service.updateClass(val).subscribe((res) => {
       alert(res.toString());
     });
   }
