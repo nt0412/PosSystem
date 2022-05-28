@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-add-edit-class',
@@ -7,9 +8,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddEditClassComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: SharedService) {}
+
+  @Input() brand: any;
+  Id: string;
+  Name: string;
 
   ngOnInit(): void {
+    this.Id = this.brand.Id;
+    this.Name = this.brand.Name;
+  }
+
+  addBrand() {
+    var val = {
+      Id: this.Id,
+      Name: this.Name,
+    };
+
+    this.service.addBrand(val).subscribe((res) => {
+      alert(res.toString());
+    });
+  }
+
+  updateBrand() {
+    var val = {
+      Id: this.Id,
+      Name: this.Name,
+    };
+
+    this.service.updateBrand(val).subscribe((res) => {
+      alert(res.toString());
+    });
   }
 
 }

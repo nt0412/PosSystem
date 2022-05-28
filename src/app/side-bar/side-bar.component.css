@@ -74,6 +74,24 @@
     font-size: 1.3rem;
 }
 
+.dropdown-menu.show {
+    background: none;
+    padding: 0;
+}
+
+.dropdown ul {
+    padding: 0;
+    border: none;
+}
+
+.dropdown ul li {
+    font-size: 1.5rem;
+}
+
+.dropdown ul li:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
 @media screen and (max-width: 1080px) {
     .side-bar {
         width: 0px;

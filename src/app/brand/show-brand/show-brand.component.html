@@ -1,13 +1,23 @@
 <!-- main -->
-<div class="inventory-page-manager">
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary add-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="addClick()">
-        Add new item
-    </button>
 
+<div class="inventory-page-manager">
+    <div class="inventory-header">
+        <div class="left-btns">
+            <button class="add-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="addClick()">
+                <img src="../../../assets/images/inventory-icon/add-icon.svg" alt="">
+                Add item
+            </button>
+        </div>
+        <div class="search-area">
+            <input type="text" name="search" [(ngModel)]="searchText" placeholder="Searching..." />
+            <button class="search-btn">
+                <i class="fab fa-sistrix"></i>
+            </button>
+        </div>
+    </div>
     <!-- Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-center modal-lg">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">{{ModalTitle}}</h5>
@@ -24,12 +34,12 @@
         <div class="scrolling-table">
             <table class="inventory-table">
                 <thead>
-                    <th>Id&nbsp;&nbsp;<i class="fa fa-sort "></i></th>
-                    <th>Name&nbsp;&nbsp;<i class="fa fa-sort "></i></th>
+                    <th (click)="sort('Id')">Id&nbsp;&nbsp;<i class="fa fa-sort "></i></th>
+                    <th (click)="sort('Name')">Name&nbsp;&nbsp;<i class=" fa fa-sort "></i></th>
                     <th>Action</th>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let item of BrandList">
+                    <tr *ngFor="let item of BrandList | filter:searchText | orderBy: key: reverse | paginate: {itemsPerPage:10, currentPage:p};">
 
                         <td class="inventory-name " data-label="Name ">
                             <p>{{item.Id}}</p>
@@ -39,10 +49,10 @@
                         </td>
 
                         <td class="inventory-action " data-label="Action ">
-                            <button class="delete-btn" (click)="deleteClick(item)">
+                            <button class="delete-btn " (click)="deleteClick(item) ">
                                 <img src=" ../../assets/images/inventory-delete.svg " alt=" " />
                             </button>
-                            <button class="edit-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="editClick(item) ">
+                            <button class="edit-btn " data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="editClick(item) ">
                                 <img src="../../assets/images/inventory-edit.svg " alt=" " />
                             </button>
                         </td>
@@ -52,5 +62,7 @@
         </div>
     </div>
     <!-- end inventory table -->
+    <pagination-controls class="custom-pagination" style="display: flex; justify-content: center; font-family: 'Roboto'; margin-top: 0rem; " (pageChange)="p = $event"></pagination-controls>
+
 </div>
 <!-- end -->

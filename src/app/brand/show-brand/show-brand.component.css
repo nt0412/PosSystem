@@ -29,25 +29,6 @@
 }
 
 .inventory-header .left-btns button:nth-child(1) {
-    background: #fff;
-    border: 1px solid #00BFB2;
-    color: #00BFB2;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.inventory-header .left-btns button:nth-child(2) {
-    background: #fff;
-    border: 1px solid #FE0944;
-    color: #FE0944;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    display: none;
-}
-
-.inventory-header .left-btns button:nth-child(3) {
     background: #00BFB2;
     border: 1px solid #00BFB2;
     color: #fff;
@@ -321,7 +302,7 @@ th:last-child {
 }
 
 .search-area input {
-    height: 2rem;
+    height: 3rem;
     width: 15rem;
     border-top-left-radius: 0.7rem;
     border-bottom-left-radius: 0.7rem;
@@ -333,7 +314,7 @@ th:last-child {
 
 .search-btn {
     border: none;
-    height: 2.8rem;
+    height: 3rem;
     width: 3rem;
     font-size: 1.5rem;
     font-weight: 700;
@@ -343,12 +324,16 @@ th:last-child {
     border-bottom-right-radius: 0.5rem;
 }
 
-.ngx-pagination a,
-.ngx-pagination button {
-    color: #00BFB2;
-}
-
 .add-btn {
     width: 10rem;
     height: 4rem;
+}
+
+.custom-pagination /deep/ .ngx-pagination .current {
+    background: #00BFB2;
+}
+
+.custom-pagination /deep/ .ngx-pagination {
+    padding: 0;
+    margin: 1rem 0rem 0rem 0rem;
 }

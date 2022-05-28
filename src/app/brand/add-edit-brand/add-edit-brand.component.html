@@ -1,16 +1,20 @@
-<div class="form-group row">
-    <label class="col-sm-2 col-form-lable">Brand Name</label>
-    <div class="col-sm-10">
-        <input type="text" class="form-control" placeholder="Enter brand name" [(ngModel)]="Name">
+<div class="form-group row justify-content-center align-items-center">
+    <label class=" col-sm-3 col-form-lable ">Brand Name</label>
+    <div class="col-sm-7 ">
+        <input type="text " class="form-control " placeholder="Enter brand name " [(ngModel)]="Name ">
     </div>
 </div>
 
-<div class="d-grid gap-2 d-md-flex justify-content-md-center ">
+<div class="d-flex justify-content-between mt-3 px-5">
     <button (click)="addBrand() " *ngIf="brand.Id==0 " class="btn btn-primary ">
         Add
     </button>
 
     <button (click)="updateBrand() " *ngIf="brand.Id!=0 " class="btn btn-primary ">
         Update
+    </button>
+
+    <button data-bs-dismiss="modal" aria-label="Close" class="btn btn-primary ">
+        Done
     </button>
 </div>

@@ -13,6 +13,15 @@ export class ShowBrandComponent implements OnInit {
   ModalTitle:string = '';
   ActiveAddEditBrandComp:boolean = false;
   brand:any;
+  
+  searchText: any;
+  p:number = 1;
+  key:string = 'id';
+  reverse:boolean = false;
+  sort(key: any){
+    this.key=key;
+    this.reverse =!this.reverse;
+  }
 
   ngOnInit(): void {
     this.refreshList();

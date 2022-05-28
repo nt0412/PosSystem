@@ -13,16 +13,25 @@
             </a>
         </li>
         <li class="feature ">
-            <a href="/brand">
-                <span class="icon "><i class="fas fa-list-ol "></i></span>
-                <span class="title ">Product list</span>
-            </a>
-        </li>
-        <li class="feature ">
             <a routerLink="/inventory">
                 <span class="icon "><i class="fas fa-cubes "></i></span>
                 <span class="title ">Inventory</span>
             </a>
+        </li>
+
+        <li class="feature ">
+            <div class="dropdown">
+                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="icon "><i class="fas fa-list-ol "></i></span>
+                    <span class="title ">Manage List</span>
+                </a>
+
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item bg-transparent" href="/brand">Brand</a></li>
+                    <li><a class="dropdown-item bg-transparent" href="#">Class</a></li>
+                    <li><a class="dropdown-item bg-transparent" href="#">Task</a></li>
+                </ul>
+            </div>
         </li>
     </ul>
 </div>
